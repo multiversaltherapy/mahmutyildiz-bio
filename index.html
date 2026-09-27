@@ -177,7 +177,7 @@
             position: relative;
             display: flex;
             align-items: center;
-            justify-content: center; /* Yazıyı tam ortalar */
+            justify-content: center;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--glass-border);
             padding: 1.1rem 1.5rem;
@@ -188,9 +188,9 @@
             font-size: 1rem;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
         }
 
-        /* Sağdaki ok ikonunu bağımsız hale getirdik */
         .link-card::after {
             content: '→';
             position: absolute;
@@ -253,10 +253,31 @@
             <a href="https://www.linkedin.com/in/mahmut-yıldız-054a64218/" class="link-card" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://drive.google.com/file/d/13dgLqtZXOTRXY5dIBDj-fsghl_nepEIz/view?usp=drive_link" class="link-card" target="_blank" rel="noopener noreferrer">CV</a>
             <a href="https://olabenja.com/" class="link-card" target="_blank" rel="noopener noreferrer">OLABENJA</a>
-            <a href="mailto:mahmutyldzz5311@gmail.com" class="link-card">İletişim</a>
+            <a href="javascript:void(0)" class="link-card" id="contactBtn">İletişim</a>
         </nav>
 
     </main>
 
+    <script>
+        document.getElementById('contactBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = "mahmutyldzz5311@gmail.com";
+            
+            navigator.clipboard.writeText(email).then(() => {
+                const originalText = this.innerText;
+                this.innerText = "Mail Adresi Kopyalandı! ✓";
+                this.style.borderColor = "var(--accent-1)";
+                this.style.color = "var(--accent-1)";
+                
+                setTimeout(() => {
+                    this.innerText = originalText;
+                    this.style.borderColor = "var(--glass-border)";
+                    this.style.color = "var(--text-primary)";
+                }, 2000);
+            }).catch(err => {
+                console.error('Kopyalama işlemi başarısız: ', err);
+            });
+        });
+    </script>
 </body>
 </html>
