@@ -14,9 +14,9 @@
             --glass-border: rgba(255, 255, 255, 0.08);
             --text-primary: #f9fafb;
             --text-secondary: #9ca3af;
-            --accent-1: #6366f1; /* Indigo */
-            --accent-2: #a855f7; /* Purple */
-            --accent-3: #ec4899; /* Pink */
+            --accent-1: #6366f1;
+            --accent-2: #a855f7;
+            --accent-3: #ec4899;
         }
 
         * {
@@ -38,7 +38,6 @@
             position: relative;
         }
 
-        /* Modern Animated Background Blurs */
         .ambient-light {
             position: fixed;
             width: 40vw;
@@ -68,7 +67,6 @@
             100% { transform: translate(10%, 10%) scale(1.2); }
         }
 
-        /* Glassmorphism Container */
         .profile-container {
             width: 100%;
             max-width: 420px;
@@ -84,7 +82,6 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
-        /* Staggered Entry Animations */
         .animate-up {
             opacity: 0;
             transform: translateY(20px);
@@ -103,7 +100,6 @@
             }
         }
 
-        /* Profile Image */
         .avatar-wrapper {
             position: relative;
             width: 130px;
@@ -123,7 +119,6 @@
             background-color: var(--bg-color);
         }
 
-        /* Typography */
         .name {
             font-size: 1.75rem;
             font-weight: 800;
@@ -144,7 +139,6 @@
             text-align: center;
         }
 
-        /* Badges */
         .software-stack {
             display: flex;
             flex-wrap: wrap;
@@ -172,7 +166,6 @@
             box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2);
         }
 
-        /* Links Container */
         .links-grid {
             display: flex;
             flex-direction: column;
@@ -184,7 +177,7 @@
             position: relative;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center; /* Yazıyı tam ortalar */
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--glass-border);
             padding: 1.1rem 1.5rem;
@@ -197,15 +190,16 @@
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* The Arrow icon */
+        /* Sağdaki ok ikonunu bağımsız hale getirdik */
         .link-card::after {
             content: '→';
+            position: absolute;
+            right: 1.5rem;
             font-size: 1.2rem;
             opacity: 0.5;
             transition: all 0.4s ease;
         }
 
-        /* Hover Effect for Links */
         .link-card:hover {
             background: rgba(255, 255, 255, 0.08);
             border-color: rgba(255, 255, 255, 0.2);
@@ -219,7 +213,6 @@
             color: var(--accent-3);
         }
 
-        /* Special Styling for Main Action (Portfolio) */
         .link-card.primary {
             background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
             border-color: rgba(168, 85, 247, 0.3);
@@ -257,7 +250,7 @@
 
         <nav class="links-grid animate-up delay-4">
             <a href="https://drive.google.com/drive/folders/1kvDRnTHOB1jaCW8cut39Rl9vA3BqTPwo" class="link-card primary" target="_blank" rel="noopener noreferrer">Portfolyo</a>
-            <a href="https://tr.linkedin.com/in/mahmut-y%C4%B1ld%C4%B1z-054a64218" class="link-card" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/mahmut-yıldız-054a64218/" class="link-card" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://drive.google.com/file/d/13dgLqtZXOTRXY5dIBDj-fsghl_nepEIz/view?usp=drive_link" class="link-card" target="_blank" rel="noopener noreferrer">CV</a>
             <a href="https://olabenja.com/" class="link-card" target="_blank" rel="noopener noreferrer">OLABENJA</a>
             <a href="mailto:mahmutyldzz5311@gmail.com" class="link-card">İletişim</a>
